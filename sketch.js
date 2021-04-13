@@ -135,6 +135,7 @@ function draw() {
     camera.position.x = santa.x;
     
   }else if(gamestate === END){
+    camera.x = 300;
     ground.velocityX = 0;
     santa.visible = false;
     gameover.visible = true;
