@@ -75,16 +75,16 @@ function draw() {
   fill("white");
   textSize(16);
   noStroke();
-  text("Score: " + score, santa.x - 270, 30);
-  text("Crashes: " + crashes, santa.x + 200, 30)
+  text("Score: " + score, camera.x - 270, 30);
+  text("Crashes: " + crashes, camera.x + 200, 30)
   
   fill("red");
   textSize(35);
   strokeWeight(3);
   stroke("white");
-  text("CHRISTMAS", santa.x - 200, 40);
+  text("CHRISTMAS", camera.x - 200, 40);
   fill("green");
-  text("RUNNER", santa.x + 20, 40);
+  text("RUNNER", camera.x + 20, 40);
   
   if(gamestate === PLAY){
     textSize(10);
@@ -98,8 +98,8 @@ function draw() {
       fill("white");
       textSize(20);
       noStroke();
-      text("Control using UP & DOWN arrow keys", santa.x - 200, 60);
-      text("Collect the presents and avoid rocks", santa.x - 200, 80);
+      text("Control using UP & DOWN arrow keys", camera.x - 200, 60);
+      text("Collect the presents and avoid rocks", camera.x - 200, 80);
     }
     //snow
     if (frameCount % snowSpeed === 0){
@@ -145,6 +145,8 @@ function draw() {
     giftGroup.destroyEach();
     
     if(mousePressedOver(reset)){
+      santa.x = 420;
+      santa.y = 200;
       score = 0;
       crashes = 0;
       santa.visible = true;
